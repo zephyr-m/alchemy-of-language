@@ -1,0 +1,50 @@
+#app { min-height: 100dvh; }
+
+.app-shell {
+  width: min(100%, 32rem);
+  min-height: 100dvh;
+  margin: 0 auto;
+}
+
+.app-content {
+  position: relative;
+  z-index: 1;
+  min-height: 100dvh;
+  padding: max(1.25rem, env(safe-area-inset-top)) 1rem max(1.25rem, env(safe-area-inset-bottom));
+}
+
+.app-shell-with-navigation .app-content {
+  padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+}
+
+.app-bottom-nav:not(.bottom-navigation-preview) {
+  position: fixed;
+  z-index: 20;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: min(100%, 32rem);
+  margin: 0 auto;
+  padding: 0.5rem 0.75rem calc(0.5rem + env(safe-area-inset-bottom));
+  border: 0;
+  border-top: 1px solid rgb(215 168 74 / 24%);
+  border-radius: 0;
+  background: rgb(29 20 19 / 92%);
+  box-shadow: 0 -12px 30px rgb(0 0 0 / 20%);
+  backdrop-filter: blur(18px);
+}
+
+.app-bottom-nav > a {
+  min-height: 3.5rem;
+  align-content: center;
+  font-size: 0.64rem;
+}
+
+.route-placeholder { display: grid; gap: 1rem; padding-top: 1rem; }
+.route-placeholder h1 { margin: 0; color: var(--parchment-bright); font-size: 2rem; font-weight: 500; }
+.route-placeholder-card { border-color: rgb(215 168 74 / 22%); background: rgb(40 28 25 / 66%); }
+.route-placeholder-card [data-slot="card-content"] { color: rgb(231 211 161 / 58%); }
+
+@media (min-width: 33rem) {
+  .app-shell { border-right: 1px solid rgb(215 168 74 / 18%); border-left: 1px solid rgb(215 168 74 / 18%); }
+}

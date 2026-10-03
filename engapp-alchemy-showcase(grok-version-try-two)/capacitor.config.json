@@ -1,0 +1,6 @@
+{
+  "appId": "dev.engapp.alchemy",
+  "appName": "EngApp",
+  "webDir": "dist",
+  "server": { "androidScheme": "https" }
+}

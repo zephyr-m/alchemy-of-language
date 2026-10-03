@@ -1,0 +1,27 @@
+# Dependencies
+**/node_modules/
+
+# Generated builds and caches
+**/dist/
+**/.tmp/
+**/.vite-cache/
+**/.cache/
+**/coverage/
+
+# Logs and local environment files
+*.log
+**/.env
+**/.env.*
+!**/.env.example
+
+# Local agent and machine configuration
+.git-data/
+.agents/
+.aws/
+.codex/
+
+# Editor and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

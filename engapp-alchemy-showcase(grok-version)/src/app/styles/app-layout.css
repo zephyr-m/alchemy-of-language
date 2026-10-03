@@ -1,0 +1,58 @@
+#app { min-height: 100dvh; }
+
+.app-shell {
+  width: min(100%, 32rem);
+  min-height: 100dvh;
+  margin: 0 auto;
+}
+
+.app-content {
+  position: relative;
+  z-index: 1;
+  min-height: 100dvh;
+  padding: max(1.15rem, env(safe-area-inset-top)) 1.15rem max(1.15rem, env(safe-area-inset-bottom));
+}
+
+.app-shell-with-navigation .app-content {
+  padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+}
+
+.app-bottom-nav:not(.bottom-navigation-preview) {
+  position: fixed;
+  z-index: 20;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: min(100%, 32rem);
+  margin: 0 auto;
+  padding: 0.5rem 0.75rem calc(0.5rem + env(safe-area-inset-bottom));
+  border: 0;
+  border-top: 1px solid rgb(215 168 74 / 24%);
+  border-radius: 0;
+  background: rgb(29 20 19 / 92%);
+  box-shadow: 0 -12px 30px rgb(0 0 0 / 20%);
+  backdrop-filter: blur(18px);
+}
+
+.app-bottom-nav > a {
+  min-height: 3.35rem;
+  align-content: center;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.route-placeholder { display: grid; gap: 1rem; padding-top: 1rem; }
+.route-placeholder h1 { margin: 0; color: var(--parchment-bright); font-size: 2rem; font-weight: 500; }
+.route-placeholder-card { border-color: rgb(215 168 74 / 22%); background: rgb(40 28 25 / 66%); }
+.route-placeholder-card [data-slot="card-content"] { color: rgb(243 228 188 / 82%); font-size: 1rem; line-height: 1.45; }
+
+@media (min-width: 33rem) {
+  .app-shell {
+    background: linear-gradient(180deg, rgb(46 31 26 / 96%), rgb(28 19 17 / 98%));
+    border-right: 1px solid rgb(215 168 74 / 16%);
+    border-left: 1px solid rgb(215 168 74 / 16%);
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 28%), 0 28px 70px rgb(0 0 0 / 32%);
+  }
+}

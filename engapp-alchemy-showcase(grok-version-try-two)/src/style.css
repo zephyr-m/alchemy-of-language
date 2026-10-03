@@ -1,0 +1,14 @@
+@import "@fontsource-variable/literata/wght.css";
+@import "@fontsource/neucha/400.css";
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "./styles/tokens.css";
+@import "./styles/base.css";
+@import "./styles/layout.css";
+@import "./styles/controls.css";
+@import "./styles/learning.css";
+@import "./styles/guild.css";
+@import "./app/styles/app-layout.css";
+@import "./styles/responsive.css";
+
+@custom-variant dark (&:is(.dark *));

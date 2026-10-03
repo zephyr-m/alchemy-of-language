@@ -1,0 +1,28 @@
+@media (max-width: 900px) {
+  .showcase-shell { padding: 1rem; }
+  .intro-grid, .controls-grid, .cards-grid, .exercise-grid, .guild-grid { grid-template-columns: 1fr; }
+  .specimen-section + .specimen-section { border-top: 1px solid rgb(215 168 74 / 19%); border-left: 0; }
+  .version-stamp { display: none; }
+}
+
+@media (max-width: 620px) {
+  .showcase-shell { padding: 0; }
+  .showcase-board { border-right: 0; border-left: 0; border-radius: 0; }
+  .showcase-board::before, .showcase-board::after { display: none; }
+  .masthead { grid-template-columns: auto 1fr; gap: 0.9rem; }
+  .brand-mark { width: 3.2rem; height: 3.2rem; }
+  .masthead h1 { font-size: 2rem; }
+  .masthead-copy > p:last-child { display: none; }
+  .swatch-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .answer-grid { grid-template-columns: 1fr; }
+  .guild-letter { padding: 1.4rem 4.7rem 1.4rem 1.25rem; }
+  .stage-card-content { grid-template-columns: auto 1fr auto; }
+  .stage-arrow { display: none; }
+  .reward-preview { min-height: 6.5rem; }
+  .reward-halo { width: 3.5rem; height: 3.5rem; }
+  .nav-specimen button { min-width: 0; padding-inline: 0.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}

@@ -1,0 +1,41 @@
+.guild-letter { position: relative; min-height: 14rem; overflow: hidden; padding: 1.7rem 5.4rem 1.5rem 1.7rem; border: 1px solid #9d7543; border-radius: 0.45rem 0.9rem 0.55rem 0.7rem; color: #41291f; background: linear-gradient(105deg, rgb(111 75 42 / 10%), transparent 25%), linear-gradient(#ead6a3, #d5b879); box-shadow: inset 0 0 35px rgb(96 54 26 / 15%), 0 12px 28px rgb(0 0 0 / 20%); transform: rotate(-0.35deg); }
+.guild-letter::before { position: absolute; inset: 0; pointer-events: none; content: ""; opacity: 0.28; background-image: repeating-linear-gradient(0deg, transparent 0 27px, rgb(102 62 36 / 12%) 28px); }
+.letter-pin { position: absolute; top: 1rem; right: 1rem; display: grid; width: 2.4rem; height: 2.4rem; place-items: center; border: 1px solid rgb(80 46 27 / 26%); border-radius: 50%; color: #754a2f; background: rgb(255 243 207 / 30%); }
+.letter-pin svg { width: 1rem; }
+.guild-letter .letter-kicker { position: relative; color: #8b5133; }
+.guild-letter h3 { position: relative; max-width: 27rem; margin: 0.8rem 0 0.5rem; font-family: var(--font-display); font-size: clamp(1.2rem, 2.3vw, 1.65rem); font-weight: 600; line-height: 1.2; }
+.guild-letter > p:not(.letter-kicker) { position: relative; max-width: 28rem; margin: 0; color: rgb(65 41 31 / 78%); font-size: 0.76rem; line-height: 1.55; }
+.letter-progress { position: relative; width: min(20rem, 90%); height: 0.45rem; margin-top: 1.25rem; overflow: hidden; border-radius: 99px; background: rgb(72 42 29 / 19%); box-shadow: inset 0 1px 2px rgb(68 35 19 / 24%); }
+.wax-seal { position: absolute; right: 1.1rem; bottom: 0.8rem; display: grid; width: 3.8rem; height: 3.8rem; place-items: center; border-radius: 48% 52% 46% 54%; color: #e3a086; background: radial-gradient(circle at 40% 35%, #c95c4e, #843126 68%); box-shadow: 0 3px 0 #60241d, 0 5px 14px rgb(62 24 16 / 38%), inset 0 2px rgb(255 210 179 / 20%); }
+.wax-seal::before { position: absolute; inset: 0.55rem; border: 1px solid rgb(255 211 183 / 36%); border-radius: 50%; content: ""; }
+.wax-seal span { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; }
+
+.reward-preview { display: grid; width: 100%; min-height: 8rem; grid-template-columns: auto 1fr auto; gap: 1rem; justify-content: initial; padding: 1.1rem 1.2rem; border: 1px solid rgb(215 168 74 / 36%); border-radius: 1rem; color: var(--parchment); background: radial-gradient(circle at 17% 50%, rgb(215 168 74 / 17%), transparent 25%), linear-gradient(130deg, #553824, #2c201d); box-shadow: var(--inset-line), 0 8px 25px rgb(0 0 0 / 18%); text-align: left; transition: transform 150ms ease, border-color 150ms ease; }
+.reward-preview:hover { transform: translateY(-2px); border-color: rgb(215 168 74 / 67%); background-color: #4b3225; }
+.reward-halo { display: grid; width: 4.3rem; height: 4.3rem; place-items: center; border: 1px solid rgb(215 168 74 / 55%); border-radius: 50%; color: var(--brass-light); background: radial-gradient(circle, rgb(215 168 74 / 17%), transparent 68%); box-shadow: 0 0 0 6px rgb(215 168 74 / 5%), 0 0 28px rgb(215 168 74 / 17%); }
+.reward-halo svg { width: 1.8rem; height: 1.8rem; }
+.reward-preview > span:nth-child(2) { display: grid; gap: 0.25rem; white-space: normal; }
+.reward-preview small { color: rgb(231 211 161 / 48%); font-size: 0.65rem; }
+.reward-preview strong { color: var(--parchment-bright); font-family: var(--font-display); font-size: clamp(1rem, 2vw, 1.25rem); }
+.reward-preview > svg { width: 1.1rem; color: var(--brass); }
+
+.reward-dialog { max-width: 28rem; border-color: rgb(215 168 74 / 45%); color: var(--parchment); background: radial-gradient(circle at 50% 0%, rgb(215 168 74 / 16%), transparent 42%), linear-gradient(150deg, #3b2921, #201817); box-shadow: 0 25px 80px rgb(0 0 0 / 55%), inset 0 1px rgb(255 255 255 / 8%); }
+.reward-dialog-header { align-items: center; text-align: center; }
+.reward-medal { display: grid; width: 4.8rem; height: 4.8rem; margin: 0 auto 0.55rem; place-items: center; border: 1px solid rgb(215 168 74 / 60%); border-radius: 50%; color: var(--brass-light); background: radial-gradient(circle, #73522b, #33241d); box-shadow: 0 0 0 6px rgb(215 168 74 / 7%), 0 0 34px rgb(215 168 74 / 20%); }
+.reward-medal svg { width: 2rem; height: 2rem; }
+.stars { display: flex; justify-content: center; gap: 0.25rem; color: var(--brass-light); }
+.stars svg { width: 0.9rem; fill: rgb(215 168 74 / 25%); }
+.reward-dialog [data-slot="dialog-title"] { margin-top: 0.45rem; color: var(--parchment-bright); font-family: var(--font-display); font-size: 1.4rem; }
+.reward-dialog [data-slot="dialog-description"] { color: rgb(231 211 161 / 54%); }
+.reward-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.55rem; margin: 1.2rem 0; }
+.reward-stats > div { display: grid; justify-items: center; gap: 0.1rem; padding: 0.7rem 0.3rem; border: 1px solid rgb(215 168 74 / 16%); border-radius: 0.7rem; background: rgb(0 0 0 / 13%); }
+.reward-stats svg { width: 1rem; color: var(--brass); }
+.reward-stats strong { color: var(--cream); font-family: var(--font-display); font-size: 1.1rem; }
+.reward-stats span { color: rgb(231 211 161 / 46%); font-size: 0.6rem; }
+
+.system-footer { display: grid; justify-items: center; gap: 1rem; padding: 2rem 1.25rem 2.4rem; }
+.nav-specimen { display: flex; width: min(31rem, 100%); justify-content: space-around; padding: 0.48rem; border: 1px solid rgb(215 168 74 / 24%); border-radius: 1rem; background: rgb(13 9 9 / 36%); box-shadow: inset 0 1px rgb(255 255 255 / 4%), 0 8px 25px rgb(0 0 0 / 14%); }
+.nav-specimen > :is(button, a) { display: grid; min-width: 4rem; justify-items: center; gap: 0.28rem; padding: 0.55rem 0.7rem; border: 0; border-radius: 0.72rem; color: rgb(243 228 188 / 68%); background: transparent; font-size: 0.72rem; text-decoration: none; cursor: pointer; }
+.nav-specimen > :is(button, a) svg { width: 1.1rem; }
+.nav-specimen > :is(button, a).active { color: #8bdcaf; background: rgb(87 181 134 / 10%); box-shadow: inset 0 0 0 1px rgb(87 181 134 / 17%); }
+.system-footer > p { margin: 0; color: rgb(243 228 188 / 58%); font-size: 0.78rem; letter-spacing: 0.04em; }
