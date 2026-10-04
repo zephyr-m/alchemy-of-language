@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import type { SpecialMedal, TieredMedal } from '@/entities/achievement'
-import { ArrowLeft } from '@lucide/vue'
-import { Button } from '@/components/ui/button'
 import { MedalFilters, MedalsSummary, MedalTierLegend, SpecialMedalList, TieredMedalList } from '@/widgets/medal-collection'
 
 const tieredMedals: TieredMedal[] = [
@@ -34,9 +32,6 @@ const specialMedals: SpecialMedal[] = [
 <template>
   <div class="medals-page">
     <header class="medals-header">
-      <Button as-child variant="ghost" class="medals-back">
-        <RouterLink :to="{ name: 'home' }"><ArrowLeft /> Назад</RouterLink>
-      </Button>
       <h1>Коллекция медалей</h1>
     </header>
 
@@ -51,8 +46,6 @@ const specialMedals: SpecialMedal[] = [
 
 <style scoped>
 .medals-page { display: grid; gap: 1.35rem; padding: 0.2rem 0 1rem; }
-.medals-header { display: grid; grid-template-columns: auto 1fr; gap: 0.75rem; align-items: center; }
-.medals-back { height: auto; padding: 0; color: rgb(231 211 161 / 58%); background: transparent; }
-.medals-back svg { width: 1rem; }
-.medals-header h1 { margin: 0; color: var(--parchment-bright); font-family: var(--font-display); font-size: 1.4rem; font-weight: 500; text-align: right; }
+.medals-header { display: grid; grid-template-columns: 1fr; gap: 0.75rem; align-items: center; }
+.medals-header h1 { margin: 0; color: var(--parchment-bright); font-family: var(--font-interface); font-size: var(--type-title); font-weight: 500; text-align: right; }
 </style>

@@ -24,16 +24,16 @@ defineEmits<{
     :disabled="disabled"
     @click="$emit('select', option.id)"
   >
-    <span>
+    <span class="answer-option-marker">
       <Check v-if="state === 'correct'" />
       <X v-else-if="state === 'wrong'" />
       <template v-else>{{ option.label }}</template>
     </span>
-    {{ option.text }}
+    <span class="answer-option-text learning-text">{{ option.text }}</span>
   </button>
 </template>
 
 <style scoped>
 .answer-option:disabled { cursor: default; }
-.answer-option > span svg { width: 1rem; }
+.answer-option-marker svg { width: 1rem; }
 </style>

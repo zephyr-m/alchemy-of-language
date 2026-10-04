@@ -13,7 +13,7 @@ defineProps<{
 <template>
   <div class="mastery-list">
     <div v-for="item in items" :key="item.word">
-      <span>{{ item.word }}</span>
+      <span class="learning-text">{{ item.word }}</span>
       <div class="mastery-pips" :aria-label="`${item.completed} из ${item.total} прохождений`">
         <i
           v-for="step in item.total"

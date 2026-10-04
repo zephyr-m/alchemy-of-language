@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button'
     <section class="specimen-section buttons-section">
       <div class="section-heading">
         <span>03</span>
-        <div><h2>Действия</h2><p>Состояния кнопок shadcn-vue</p></div>
+        <div><h2>Действия</h2><p>Главное, спокойное и закрытое</p></div>
       </div>
       <div class="button-lab">
         <Button class="alchemy-button alchemy-button-primary" size="lg">

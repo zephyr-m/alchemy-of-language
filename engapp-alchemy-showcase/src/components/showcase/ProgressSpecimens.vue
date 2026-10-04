@@ -5,10 +5,10 @@ import { MasteryPreview } from '@/widgets/mastery-preview'
 import { StageList } from '@/widgets/stage-list'
 
 const stages: LearningStageSummary[] = [
-  { id: 1, rune: 'Ⅰ', title: 'Знакомство', count: 9, examples: ['apple', 'book', 'house'] },
-  { id: 2, rune: 'Ⅱ', title: 'Выбор перевода', count: 7, examples: ['water', 'friend', 'morning'] },
-  { id: 3, rune: 'Ⅲ', title: 'Обратный выбор', count: 6, examples: ['window', 'garden', 'work'] },
-  { id: 4, rune: 'Ⅳ', title: 'Воспроизведение', count: 3, examples: ['enough', 'answer', 'together'] },
+  { id: 1, rune: 'Ⅰ', title: 'Этап 1', count: 9, examples: ['apple', 'book', 'house'] },
+  { id: 2, rune: 'Ⅱ', title: 'Этап 2', count: 7, examples: ['water', 'friend', 'morning'] },
+  { id: 3, rune: 'Ⅲ', title: 'Этап 3', count: 6, examples: ['window', 'garden', 'work'] },
+  { id: 4, rune: 'Ⅳ', title: 'Этап 4', count: 3, examples: ['enough', 'answer', 'together'] },
 ]
 
 const masteryItems = [

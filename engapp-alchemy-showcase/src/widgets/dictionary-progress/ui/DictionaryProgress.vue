@@ -34,10 +34,10 @@ const progress = computed(() => {
 </template>
 
 <style scoped>
-.dictionary-progress-content { display: grid; grid-template-columns: auto 1fr auto; gap: 0.85rem; align-items: center; padding: 0.9rem; }
+.dictionary-progress-content { display: grid; grid-template-columns: auto 1fr auto; gap: 0.9rem; align-items: center; padding: 0.95rem; }
 .dictionary-progress-rune svg { width: 1.15rem; }
 .dictionary-progress-copy { display: grid; min-width: 0; gap: 0.18rem; }
-.dictionary-progress-copy strong { color: var(--parchment-bright); font-family: var(--font-display); font-size: 0.92rem; font-weight: 600; }
-.dictionary-progress-copy > span { color: rgb(231 211 161 / 48%); font-size: 0.65rem; }
-.dictionary-progress-copy .progress-track { height: 0.42rem; margin-top: 0.35rem; }
+.dictionary-progress-copy strong { color: var(--parchment-bright); font-family: var(--font-interface); font-size: var(--type-title); font-weight: 600; }
+.dictionary-progress-copy > span { color: rgb(243 228 188 / 76%); font-size: var(--type-body); }
+.dictionary-progress-copy .progress-track { height: 0.5rem; margin-top: 0.4rem; }
 </style>

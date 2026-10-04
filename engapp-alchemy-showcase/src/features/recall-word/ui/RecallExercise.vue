@@ -12,9 +12,13 @@ withDefaults(defineProps<{
   answer: string
   completedPasses: number
   totalPasses?: number
-  state?: 'question' | 'mastered'
+  state?: 'question' | 'result' | 'mastered'
+  result?: 'cycle' | 'mastered' | 'wrong'
+  resultPasses?: number
 }>(), {
   state: 'question',
+  result: 'mastered',
+  resultPasses: 3,
 })
 
 defineEmits<{
@@ -36,7 +40,12 @@ defineEmits<{
     </CardContent>
 
     <CardContent v-else>
-      <WordMasteredPanel :word="answer" @next="$emit('next')" />
+      <WordMasteredPanel
+        :word="answer"
+        :outcome="result"
+        :full-passes="resultPasses"
+        @next="$emit('next')"
+      />
     </CardContent>
 
     <CardFooter v-if="state === 'question'" class="recall-progress-footer">

@@ -22,7 +22,7 @@ defineProps<{
           <div class="stage-rune">{{ stage.rune }}</div>
           <div class="stage-copy">
             <strong>{{ stage.title }}</strong>
-            <span>{{ stage.examples.join(' · ') }}</span>
+            <span class="learning-text">{{ stage.examples.join(' · ') }}</span>
           </div>
           <Badge variant="outline" class="count-badge">{{ stage.count }}</Badge>
           <ChevronRight class="stage-arrow" />

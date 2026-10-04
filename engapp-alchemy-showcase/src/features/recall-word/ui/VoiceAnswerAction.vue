@@ -18,8 +18,8 @@ defineEmits<{
 
 <style scoped>
 .voice-answer-action { display: grid; gap: 0.85rem; }
-.answer-divider { display: flex; align-items: center; gap: 0.75rem; color: rgb(231 211 161 / 42%); font-size: 0.68rem; text-align: center; }
+.answer-divider { display: flex; align-items: center; gap: 0.75rem; color: rgb(243 228 188 / 68%); font-size: var(--type-small); text-align: center; }
 .answer-divider::before,
-.answer-divider::after { height: 1px; flex: 1; background: rgb(215 168 74 / 14%); content: ''; }
+.answer-divider::after { height: 1px; flex: 1; background: rgb(215 168 74 / 24%); content: ''; }
 .voice-answer-button { width: 100%; }
 </style>

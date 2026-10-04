@@ -23,8 +23,8 @@ defineProps<{
 </template>
 
 <style scoped>
-.stage-words { display: grid; gap: 0.5rem; }
-.stage-word-columns { display: grid; grid-template-columns: 1fr auto; gap: 1rem; padding-inline: 1rem; color: rgb(231 211 161 / 42%); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; }
-.stage-word-card { gap: 0; padding-block: 0; }
+.stage-words { display: grid; gap: 0.6rem; }
+.stage-word-columns { display: grid; grid-template-columns: 1fr auto; gap: 1rem; padding-inline: 1rem; color: rgb(243 228 188 / 68%); font-size: var(--type-small); font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; }
+.stage-word-card { gap: 0; padding-block: 0; overflow: hidden; }
 .stage-word-card-content { padding: 0; }
 </style>

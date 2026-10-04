@@ -5,6 +5,6 @@ import { BottomNavigation } from '@/widgets/bottom-navigation'
 <template>
   <footer class="system-footer">
     <BottomNavigation preview />
-    <p>shadcn-vue · алхимическая тема · интерактивный стенд</p>
+    <p>EngApp · компоненты мастерской</p>
   </footer>
 </template>

@@ -33,7 +33,7 @@ const swatches = [
         <p class="display-type">Путь алхимика</p>
         <p class="heading-type">Слово становится знанием</p>
         <p class="body-type">Изучайте английские слова, проходя четыре стадии преобразования.</p>
-        <div class="word-pair"><strong>knowledge</strong><span>знание</span><em>/ˈnɒlɪdʒ/</em></div>
+        <div class="word-pair"><strong class="learning-text">knowledge</strong><span class="learning-text">знание</span><em class="learning-text">/ˈnɒlɪdʒ/</em></div>
       </div>
     </section>
   </div>

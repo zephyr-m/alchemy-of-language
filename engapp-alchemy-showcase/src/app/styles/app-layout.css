@@ -1,9 +1,17 @@
 #app { min-height: 100dvh; }
 
 .app-shell {
+  position: relative;
+  isolation: isolate;
   width: min(100%, 32rem);
   min-height: 100dvh;
   margin: 0 auto;
+  background:
+    radial-gradient(ellipse at 12% -5%, rgb(255 206 122 / 12%), transparent 24rem),
+    radial-gradient(ellipse at 90% 108%, rgb(110 52 40 / 11%), transparent 22rem),
+    repeating-linear-gradient(112deg, transparent 0 14px, rgb(255 228 180 / 1.5%) 14px 15px),
+    linear-gradient(168deg, rgb(60 41 34 / 74%), rgb(29 20 18 / 88%) 54%, rgb(22 16 15 / 94%));
+  box-shadow: inset 0 1px rgb(255 228 180 / 10%), inset 0 -40px 70px rgb(0 0 0 / 16%);
 }
 
 .app-content {
@@ -17,6 +25,16 @@
   padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
 }
 
+.app-route-back {
+  height: auto;
+  margin-bottom: 1rem;
+  padding: 0;
+  color: rgb(243 228 188 / 76%);
+  background: transparent;
+}
+
+.app-route-back svg { width: 1rem; }
+
 .app-bottom-nav:not(.bottom-navigation-preview) {
   position: fixed;
   z-index: 20;
@@ -27,24 +45,24 @@
   margin: 0 auto;
   padding: 0.5rem 0.75rem calc(0.5rem + env(safe-area-inset-bottom));
   border: 0;
-  border-top: 1px solid rgb(215 168 74 / 24%);
+  border-top: 1px solid rgb(226 184 104 / 34%);
   border-radius: 0;
-  background: rgb(29 20 19 / 92%);
-  box-shadow: 0 -12px 30px rgb(0 0 0 / 20%);
+  background: linear-gradient(180deg, rgb(62 42 34 / 94%), rgb(27 19 18 / 97%));
+  box-shadow: inset 0 1px rgb(255 228 180 / 10%), 0 -12px 30px rgb(0 0 0 / 28%);
   backdrop-filter: blur(18px);
 }
 
 .app-bottom-nav > a {
   min-height: 3.5rem;
   align-content: center;
-  font-size: 0.64rem;
+  font-size: var(--type-small);
 }
 
 .route-placeholder { display: grid; gap: 1rem; padding-top: 1rem; }
-.route-placeholder h1 { margin: 0; color: var(--parchment-bright); font-size: 2rem; font-weight: 500; }
+.route-placeholder h1 { margin: 0; color: var(--parchment-bright); font-size: var(--type-display); font-weight: 500; }
 .route-placeholder-card { border-color: rgb(215 168 74 / 22%); background: rgb(40 28 25 / 66%); }
 .route-placeholder-card [data-slot="card-content"] { color: rgb(231 211 161 / 58%); }
 
 @media (min-width: 33rem) {
-  .app-shell { border-right: 1px solid rgb(215 168 74 / 18%); border-left: 1px solid rgb(215 168 74 / 18%); }
+  .app-shell { border-right: 1px solid rgb(226 184 104 / 28%); border-left: 1px solid rgb(226 184 104 / 28%); box-shadow: 0 0 55px rgb(8 4 3 / 28%), inset 0 1px rgb(255 228 180 / 10%), inset 0 -40px 70px rgb(0 0 0 / 16%); }
 }

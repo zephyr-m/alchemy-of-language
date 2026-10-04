@@ -36,6 +36,7 @@ const stageCompleteOpen = ref(false)
       </Button>
       <StageCompleteDialog
         v-model:open="stageCompleteOpen"
+        :current-stage="2"
         :advanced="6"
         :advanced-stage="3"
         :returned="2"

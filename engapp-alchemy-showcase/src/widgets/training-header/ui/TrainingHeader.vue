@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { ArrowLeft } from '@lucide/vue'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
 
 withDefaults(defineProps<{
   stage: number
@@ -16,12 +14,6 @@ withDefaults(defineProps<{
 
 <template>
   <header class="training-header">
-    <Button as-child variant="outline" size="icon" class="alchemy-button alchemy-button-outline training-back">
-      <RouterLink :to="{ name: 'home' }" aria-label="Вернуться на главную">
-        <ArrowLeft />
-      </RouterLink>
-    </Button>
-
     <div class="training-header-copy">
       <Badge variant="outline" class="lesson-badge">Этап {{ stage }} из {{ totalStages }}</Badge>
       <h1>{{ title }}</h1>

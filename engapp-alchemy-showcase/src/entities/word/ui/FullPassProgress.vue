@@ -23,6 +23,6 @@ withDefaults(defineProps<{
 <style scoped>
 .full-pass-progress { display: grid; width: 100%; grid-template-columns: 1fr auto auto; gap: 0.65rem; align-items: center; }
 .full-pass-progress.compact { width: auto; grid-template-columns: auto; }
-.full-pass-progress > span { color: rgb(231 211 161 / 55%); font-size: 0.67rem; }
-.full-pass-progress > strong { color: rgb(231 211 161 / 44%); font-size: 0.62rem; }
+.full-pass-progress > span { color: rgb(243 228 188 / 76%); font-size: var(--type-small); }
+.full-pass-progress > strong { color: var(--parchment-bright); font-family: var(--font-interface); font-size: var(--type-small); }
 </style>

@@ -22,9 +22,6 @@ const masteredWords: WordPair[] = [
       <Button as-child class="alchemy-button alchemy-button-primary">
         <RouterLink :to="{ name: 'training' }">Продолжить</RouterLink>
       </Button>
-      <Button as-child variant="outline" class="alchemy-button alchemy-button-outline">
-        <RouterLink :to="{ name: 'home' }">На главную</RouterLink>
-      </Button>
     </div>
   </div>
 </template>

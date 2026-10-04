@@ -1,75 +1,27 @@
 <script setup lang="ts">
-import type { AnswerState, ChoiceOption } from '@/features/answer-word'
-import { computed, ref } from 'vue'
 import { ChoiceExercise } from '@/features/answer-word'
 import { StageCompleteDialog } from '@/features/complete-stage'
+import { useChoiceStage } from '@/features/word-learning'
 import { TrainingHeader } from '@/widgets/training-header'
 
-interface ReverseQuestion {
-  word: string
-  correctOptionId: string
-  options: ChoiceOption[]
-}
-
-const questions: ReverseQuestion[] = [
-  {
-    word: 'вода',
-    correctOptionId: 'water',
-    options: [
-      { id: 'fire', label: 'A', text: 'fire' },
-      { id: 'wind', label: 'B', text: 'wind' },
-      { id: 'water', label: 'C', text: 'water' },
-      { id: 'earth', label: 'D', text: 'earth' },
-    ],
-  },
-  {
-    word: 'друг',
-    correctOptionId: 'friend',
-    options: [
-      { id: 'morning', label: 'A', text: 'morning' },
-      { id: 'friend', label: 'B', text: 'friend' },
-      { id: 'road', label: 'C', text: 'road' },
-      { id: 'night', label: 'D', text: 'night' },
-    ],
-  },
-]
-
-const position = ref(1)
-const selectedOptionId = ref<string>()
-const answerState = ref<AnswerState>('idle')
-const stageCompleteOpen = ref(false)
-const question = computed(() => questions[(position.value - 1) % questions.length]!)
-const correctOption = computed(() => question.value.options.find(option => option.id === question.value.correctOptionId)!)
-const feedbackTitle = computed(() => answerState.value === 'correct' ? 'Верно!' : `Правильный ответ: ${correctOption.value.text}`)
-const feedbackMessage = computed(() => answerState.value === 'correct' ? 'Слово перешло на этап 4' : 'Слово вернулось на этап 2')
-
-function selectOption(optionId: string) {
-  if (answerState.value !== 'idle') return
-  selectedOptionId.value = optionId
-  answerState.value = optionId === question.value.correctOptionId ? 'correct' : 'wrong'
-}
-
-function nextQuestion() {
-  if (position.value === 5) {
-    stageCompleteOpen.value = true
-    return
-  }
-  position.value += 1
-  selectedOptionId.value = undefined
-  answerState.value = 'idle'
-}
+const {
+  advancedCount, answerState, currentIndex, feedbackMessage, feedbackTitle,
+  nextQuestion, question, remainingCount, returnedCount, selectOption, selectedOptionId,
+  stageCompleteOpen, words,
+} = useChoiceStage(3)
 </script>
 
 <template>
   <div class="reverse-choice-page">
-    <TrainingHeader :stage="3" rune="Ⅲ" title="Выбор английского" :word-count="5" />
+    <TrainingHeader :stage="3" rune="Ⅲ" title="Выбор английского" :word-count="remainingCount" />
     <ChoiceExercise
-      :position="position"
-      :total-questions="5"
+      v-if="question"
+      :position="currentIndex + 1"
+      :total-questions="words.length"
       prompt="Выбери английское слово"
       :word="question.word"
       :options="question.options"
-      :completed-passes="1"
+      :completed-passes="question.completedPasses"
       stacked-prompt
       :show-question-number="false"
       :question-mark="false"
@@ -83,9 +35,10 @@ function nextQuestion() {
     />
     <StageCompleteDialog
       v-model:open="stageCompleteOpen"
-      :advanced="4"
+      :current-stage="3"
+      :advanced="advancedCount"
       :advanced-stage="4"
-      :returned="1"
+      :returned="returnedCount"
       :returned-stage="2"
     />
   </div>

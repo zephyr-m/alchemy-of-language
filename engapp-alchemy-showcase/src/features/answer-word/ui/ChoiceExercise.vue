@@ -51,13 +51,13 @@ function optionState(optionId: string): AnswerState {
       <Badge v-if="showQuestionNumber" variant="outline" class="lesson-badge">Слово {{ position }} из {{ totalQuestions }}</Badge>
       <CardTitle class="question-title" :class="{ 'question-title-stacked': stackedPrompt }">
         <span>{{ prompt }}</span>
-        <em>{{ word }}</em><template v-if="questionMark">?</template>
+        <em class="learning-text">{{ word }}</em><template v-if="questionMark">?</template>
       </CardTitle>
       <CardDescription v-if="instruction">{{ instruction }}</CardDescription>
     </CardHeader>
 
     <CardHeader v-else class="answered-question-header">
-      <CardTitle class="question-title answered-question-word"><em>{{ word }}</em></CardTitle>
+      <CardTitle class="question-title answered-question-word"><em class="learning-text">{{ word }}</em></CardTitle>
     </CardHeader>
 
     <CardContent class="answer-grid">
@@ -88,8 +88,8 @@ function optionState(optionId: string): AnswerState {
 
 <style scoped>
 .question-title-stacked { display: grid; gap: 1rem; }
-.question-title-stacked em { display: block; font-size: clamp(1.8rem, 7vw, 2.35rem); font-style: normal; text-align: center; }
+.question-title-stacked em { display: block; font-style: normal; text-align: center; }
 .answered-question-header { padding-bottom: 0.35rem; }
-.answered-question-word { font-size: clamp(1.8rem, 7vw, 2.35rem); text-align: center; }
+.answered-question-word { text-align: center; }
 .answered-question-word em { font-style: normal; }
 </style>

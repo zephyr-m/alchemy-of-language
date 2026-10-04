@@ -27,6 +27,6 @@ const progress = computed(() => {
 <style scoped>
 .daily-goal-summary { display: grid; gap: 0.7rem; }
 .daily-goal-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 0.75rem; }
-.daily-goal-heading h2 { margin: 0; color: var(--parchment-bright); font-family: var(--font-display); font-size: 1rem; font-weight: 600; }
-.daily-goal-heading strong { color: var(--brass-light); font-family: var(--font-display); font-size: 0.75rem; }
+.daily-goal-heading h2 { margin: 0; color: var(--parchment-bright); font-family: var(--font-interface); font-size: var(--type-title); font-weight: 600; }
+.daily-goal-heading strong { color: var(--brass-light); font-family: var(--font-interface); font-size: var(--type-body); }
 </style>

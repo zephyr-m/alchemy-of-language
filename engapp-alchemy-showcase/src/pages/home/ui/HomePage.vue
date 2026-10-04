@@ -1,9 +1,20 @@
 <script setup lang="ts">
 import { Flame, FlaskConical, Sparkles } from '@lucide/vue'
+import { onMounted, ref } from 'vue'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { wordLearningService } from '@/features/word-learning'
 import { DailyProgress } from '@/widgets/daily-progress'
 import { DictionaryProgress } from '@/widgets/dictionary-progress'
+
+const masteredCount = ref(0)
+const catalogCount = ref(0)
+
+onMounted(async () => {
+  const dictionary = await wordLearningService.getDictionary()
+  masteredCount.value = dictionary.words.length
+  catalogCount.value = dictionary.totalCatalogWords
+})
 </script>
 
 <template>
@@ -14,7 +25,6 @@ import { DictionaryProgress } from '@/widgets/dictionary-progress'
           <FlaskConical :size="21" :stroke-width="1.8" />
         </div>
         <div>
-          <p class="eyebrow">EngApp</p>
           <h1>Мастерская</h1>
         </div>
       </div>
@@ -24,7 +34,6 @@ import { DictionaryProgress } from '@/widgets/dictionary-progress'
     <section class="home-section" aria-labelledby="today-title">
       <div class="home-section-heading">
         <div>
-          <p class="eyebrow">Текущий прогресс</p>
           <h2 id="today-title">Сегодня</h2>
         </div>
       </div>
@@ -40,13 +49,12 @@ import { DictionaryProgress } from '@/widgets/dictionary-progress'
     <section class="home-section" aria-labelledby="dictionary-title">
       <div class="home-section-heading">
         <div>
-          <p class="eyebrow">Книга знаний</p>
           <h2 id="dictionary-title">Мой словарь</h2>
         </div>
       </div>
 
       <RouterLink :to="{ name: 'dictionary' }" class="dictionary-link">
-        <DictionaryProgress :mastered="124" :total="5000" show-arrow />
+        <DictionaryProgress :mastered="masteredCount" :total="catalogCount" show-arrow />
       </RouterLink>
     </section>
   </div>
@@ -78,16 +86,16 @@ import { DictionaryProgress } from '@/widgets/dictionary-progress'
 .home-section-heading h2 {
   margin: 0;
   color: var(--parchment-bright);
-  font-family: var(--font-display);
+  font-family: var(--font-interface);
   font-weight: 500;
 }
 
-.home-header h1 { margin-top: 0.08rem; font-size: 1.75rem; line-height: 1; }
+.home-header h1 { margin-top: 0.08rem; font-size: var(--type-title); line-height: 1; }
 .home-header .game-badge { flex: 0 0 auto; }
 
 .home-section { display: grid; gap: 0.75rem; }
 .home-section-heading { justify-content: space-between; }
-.home-section-heading h2 { margin-top: 0.18rem; font-size: 1.28rem; }
+.home-section-heading h2 { margin-top: 0.18rem; font-size: var(--type-title); }
 
 .home-primary-action {
   width: 100%;
@@ -99,7 +107,6 @@ import { DictionaryProgress } from '@/widgets/dictionary-progress'
 .dictionary-link:focus-visible { outline: 3px solid rgb(87 181 134 / 38%); outline-offset: 3px; }
 
 @media (max-width: 370px) {
-  .home-header h1 { font-size: 1.5rem; }
   .home-brand-mark { width: 2.55rem; height: 2.55rem; }
   .home-header .game-badge { padding-inline: 0.5rem; }
 }

@@ -8,12 +8,13 @@ const model = defineModel<string>({ default: '' })
 <template>
   <label class="word-search">
     <Search aria-hidden="true" />
-    <Input v-model="model" class="word-search-input" placeholder="Поиск слова…" aria-label="Поиск слова" />
+    <Input v-model="model" class="word-search-input learning-text" placeholder="Поиск слова…" aria-label="Поиск слова" />
   </label>
 </template>
 
 <style scoped>
 .word-search { position: relative; display: block; }
-.word-search > svg { position: absolute; z-index: 1; top: 50%; left: 0.9rem; width: 1rem; transform: translateY(-50%); color: rgb(231 211 161 / 42%); pointer-events: none; }
-.word-search-input { height: 3.15rem; padding-left: 2.7rem; border-color: rgb(215 168 74 / 27%); color: var(--cream); background: rgb(12 9 9 / 28%); box-shadow: inset 0 2px 7px rgb(0 0 0 / 22%); }
+.word-search > svg { position: absolute; z-index: 1; top: 50%; left: 1rem; width: 1.05rem; transform: translateY(-50%); color: var(--brass-light); pointer-events: none; }
+.word-search-input { height: 3.35rem; padding-left: 2.8rem; border-color: rgb(215 168 74 / 38%); color: var(--cream); background: linear-gradient(180deg, rgb(63 43 34 / 82%), rgb(27 19 18 / 92%)); box-shadow: inset 0 2px 8px rgb(0 0 0 / 30%), 0 5px 14px rgb(0 0 0 / 12%); }
+.word-search-input::placeholder { font-family: var(--font-interface); font-size: var(--type-body); }
 </style>

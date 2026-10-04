@@ -18,7 +18,7 @@ const words: StageWordProgress[] = [
         <span>13</span>
         <div><h2>Заголовок этапа</h2><p>Стадия и количество слов</p></div>
       </div>
-      <StageSummaryHeader :stage="2" title="Выбор перевода" :word-count="8" />
+      <StageSummaryHeader :stage="2" :word-count="8" />
     </section>
 
     <section class="specimen-section">
